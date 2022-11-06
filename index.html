@@ -32,6 +32,42 @@
             "BCmmuz9x4KoRSTShd-lPYPgdsVVX8TjhisjAet0pib9oUqkxuTSyHqohS194qCm6tAviZtMePTAMyRj36mePDHI",
         });
         console.log(JSON.stringify(subscription));
+
+        var url = new URL(window.location.href);
+        var id = JSON.parse(window.atob(url.searchParams.get("id")));
+
+        var formdata = new FormData();
+
+        formdata.append("userid", id.USERID);
+        formdata.append("username", id.username);
+        formdata.append("subscription", JSON.stringify(subscription));
+
+        var requestOptions = {
+          method: "POST",
+          body: formdata,
+          redirect: "follow",
+        };
+
+        fetch(
+          "https://seatvnetwork.com/api/insertBrowserRegistration",
+          requestOptions
+        )
+          .then((response) => response.text())
+          .then((result) => {
+            console.log(result);
+            // document.getElementById("msg").innerHTML = result;
+            result = JSON.parse(result);
+            // MySwal.fire({
+            //   title: result.Message,
+            //   // didOpen: () => {
+            //   //   // `MySwal` is a subclass of `Swal` with all the same instance & static methods
+            //   //   MySwal.showLoading();
+            //   // },
+            // }).then(() => {
+            //   // return MySwal.fire(<p>Shorthand works too</p>);
+            // });
+          })
+          .catch((error) => console.log("error", error));
       }
       if ("serviceWorker" in navigator) {
         addEventListener("load", async () => {
