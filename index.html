@@ -58,13 +58,13 @@
           .then((response) => response.text())
           .then((result) => {
             console.log(result);
-            // document.getElementById("msg").innerHTML = result;
             result = JSON.parse(result);
-
+            // document.getElementById("msg").innerHTML = result;
+            icon = result.success == "true" ? "success" : "error";
             Swal.fire({
-              icon: "Success",
+              icon: icon,
               title: "Hurray..",
-              text: "You have been successfully registered for CRM notification!",
+              text: result.Message,
               // footer: '<a href="">Why do I have this issue?</a>',
             });
           })
