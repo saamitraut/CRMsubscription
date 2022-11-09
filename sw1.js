@@ -6,7 +6,7 @@ self.addEventListener("push", (event) => {
     body: res2.body,
     icon: "images/mozilla-firefox-icon-logo-png-3.png",
     vibrate: [100, 50, 100],
-    image: "images/banner3.jpg",
+    image: "images/banner.png",
     actions: [
       {
         action: "coffee-action",
