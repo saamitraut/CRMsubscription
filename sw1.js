@@ -4,9 +4,10 @@ self.addEventListener("push", (event) => {
   //   console.log(res2.body);
   var options = {
     body: res2.body,
-    icon: "images/mozilla-firefox-icon-logo-png-3.png",
+    icon: "https://extraordinary-selkie-f925b7.netlify.app/images/mozilla-firefox-icon-logo-png-3.png",
     vibrate: [100, 50, 100],
-    image: "images/banner.png",
+    image:
+      "https://extraordinary-selkie-f925b7.netlify.app/images/mozilla-firefox-icon-logo-png-3.png",
     actions: [
       {
         action: "coffee-action",
