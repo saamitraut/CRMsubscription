@@ -61,6 +61,7 @@
             result = JSON.parse(result);
             // document.getElementById("msg").innerHTML = result;
             icon = result.success == "true" ? "success" : "error";
+            title = result.success == "true" ? "Hurray.." : "Oops..";
             Swal.fire({
               icon: icon,
               title: "Hurray..",
