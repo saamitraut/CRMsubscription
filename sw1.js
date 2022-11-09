@@ -9,14 +9,18 @@ self.addEventListener("push", (event) => {
     image: "https://extraordinary-selkie-f925b7.netlify.app/images/banner.png",
     actions: [
       {
-        action: "coffee-action",
-        title: "Coffee",
+        action: "action1",
+        title: "Action1",
+        // icon: "images/cofee.png",
+      },
+      {
+        action: "action2",
+        title: "Action2",
         // icon: "images/cofee.png",
       },
     ],
     data: { primaryKey: 1 },
   };
-
   event.waitUntil(self.registration.showNotification(res2.msg, options));
 });
 
@@ -28,17 +32,11 @@ self.addEventListener("notificationclick", function (event) {
   }
 
   switch (event.action) {
-    case "coffee-action":
+    case "action1":
       console.log("User ❤️️'s coffee.");
       break;
-    case "doughnut-action":
+    case "action2":
       console.log("User ❤️️'s doughnuts.");
-      break;
-    case "gramophone-action":
-      console.log("User ❤️️'s music.");
-      break;
-    case "atom-action":
-      console.log("User ❤️️'s science.");
       break;
     default:
       console.log(`Unknown action clicked: '${event.action}'`);
