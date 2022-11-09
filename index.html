@@ -7,6 +7,8 @@
     <title>Document</title>
   </head>
   <body>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <button onclick="subscribe()">Subscribe</button>
 
     <script>
@@ -47,6 +49,7 @@
           body: formdata,
           redirect: "follow",
         };
+        //
 
         fetch(
           "https://seatvnetwork.com/api/insertBrowserRegistration",
@@ -57,17 +60,22 @@
             console.log(result);
             // document.getElementById("msg").innerHTML = result;
             result = JSON.parse(result);
-            // MySwal.fire({
-            //   title: result.Message,
-            //   // didOpen: () => {
-            //   //   // `MySwal` is a subclass of `Swal` with all the same instance & static methods
-            //   //   MySwal.showLoading();
-            //   // },
-            // }).then(() => {
-            //   // return MySwal.fire(<p>Shorthand works too</p>);
-            // });
+
+            Swal.fire({
+              icon: "Success",
+              title: "Hurray..",
+              text: "You have been successfully registered for CRM notification!",
+              // footer: '<a href="">Why do I have this issue?</a>',
+            });
           })
-          .catch((error) => console.log("error", error));
+          .catch((error) => {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: error,
+            });
+            console.log("error", error);
+          });
       }
       if ("serviceWorker" in navigator) {
         addEventListener("load", async () => {
