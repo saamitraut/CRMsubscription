@@ -6,7 +6,7 @@ self.addEventListener("push", (event) => {
     body: res2.body,
     icon: "https://extraordinary-selkie-f925b7.netlify.app/images/mozilla-firefox-icon-logo-png-3.png",
     vibrate: [100, 50, 100],
-    image: "http://payment.iccnetwork.net/sla/api/1668439815000.jpg",
+    image: "http://payment.iccnetwork.net/sla/api/" + res2.uri + ".jpg",
     actions: [
       {
         action: "action1",
