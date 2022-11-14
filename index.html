@@ -43,9 +43,9 @@
       var formdata = new FormData();
 
       formdata.append("userid", id.USERID);
-      formdata.append("username", id.username);
+      formdata.append("client", id.client);
       formdata.append("subscription", JSON.stringify(subscription));
-      formdata.append("client", JSON.stringify(client));
+      formdata.append("username", id.username);
       var requestOptions = {
         method: "POST",
         body: formdata,
