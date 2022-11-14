@@ -1,6 +1,6 @@
 self.addEventListener("push", (event) => {
   let res2 = event.data.json();
-  //   console.log(res2.msg);
+  console.log("http://payment.iccnetwork.net/sla/api/" + res2.uri + ".jpg");
   //   console.log(res2.body);
   var options = {
     body: res2.body,
