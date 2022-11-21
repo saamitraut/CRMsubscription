@@ -1,12 +1,12 @@
 self.addEventListener("push", (event) => {
   let res2 = event.data.json();
-  //   console.log(res2.msg);
+  //console.log("http://payment.iccnetwork.net/sla/api/" + res2.uri + ".jpg");
   //   console.log(res2.body);
   var options = {
     body: res2.body,
     icon: "https://extraordinary-selkie-f925b7.netlify.app/images/mozilla-firefox-icon-logo-png-3.png",
     vibrate: [100, 50, 100],
-    image: "https://extraordinary-selkie-f925b7.netlify.app/images/banner.png",
+    image: "http://payment.iccnetwork.net/sla/api/" + res2.uri + ".jpg",
     actions: [
       {
         action: "action1",

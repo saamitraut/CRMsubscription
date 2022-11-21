@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
   </head>
+
   <body>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <button onclick="subscribe()">Subscribe</button>
 
     <script>
-      //
       function displayNotification() {
         if (Notification.permission == "granted") {
           var options = {
@@ -42,9 +42,9 @@
         var formdata = new FormData();
 
         formdata.append("userid", id.USERID);
-        formdata.append("username", id.username);
+        formdata.append("client", id.client);
         formdata.append("subscription", JSON.stringify(subscription));
-
+        formdata.append("username", id.username);
         var requestOptions = {
           method: "POST",
           body: formdata,
